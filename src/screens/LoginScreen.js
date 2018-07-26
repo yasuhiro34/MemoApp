@@ -4,22 +4,21 @@ import firebase from 'firebase';
 
 class LoginScreen extends React.Component {
   state = {
-    email: '',
-    password: '',
+    email: 'user1@example.com',
+    password: 'password',
   }
 
   // eslint-disable-next-line
   handleSubmit() {
-    const config = {
-      apiKey: 'AIzaSyBpRpqTXwAYNKa75uvOlqu1gEaMBikbtE4',
-      authDomain: 'memoapp-209ec.firebaseapp.com',
-      databaseURL: 'https://memoapp-209ec.firebaseio.com',
-      projectId: 'memoapp-209ec',
-      storageBucket: 'memoapp-209ec.appspot.com',
-      messagingSenderId: '875297125426',
-    };
-    firebase.initializeApp(config);
-    // this.props.navigation.navigate('Home')
+    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+      .then((user) => {
+        console.log('success!', user);
+        this.props.navigation.navigate('Home');
+      })
+      .catch((error) => {
+        console.log('error!', error);
+      });
+
 
     // log in!!
   }
