@@ -1,4 +1,4 @@
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import firebase from 'firebase';
 
 import MemoListScreen from './src/screens/MemoListScreen';
@@ -24,7 +24,7 @@ const config = {
 };
 firebase.initializeApp(config);
 
-const App = StackNavigator({
+const App = createStackNavigator({
   Login:      { screen: LoginScreen },
   Signup:     { screen: SignupScreen },
   Home:       { screen: MemoListScreen },
