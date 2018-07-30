@@ -50,6 +50,8 @@ class MemoEditScreen extends React.Component {
           multiline
           value={this.state.body}
           onChangeText={(text) => { this.setState({ body: text }); }}
+          autoCapitalize="none"
+          autoCorrect={false}
         />
         <CircleButton onPress={this.handlePress.bind(this)}>
           {'\uf00c'}
