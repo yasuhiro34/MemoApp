@@ -52,8 +52,12 @@ const App = createStackNavigator({
     },
     headerTitleStyle: {
       color: '#FFF',
-      textAlign: 'center',
-      flex: 1,
+      ...Platform.select({
+        android: {
+          textAlign: 'center',
+          // flex: 1,
+        },
+      }),
     },
   },
 });
