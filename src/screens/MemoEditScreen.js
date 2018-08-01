@@ -37,8 +37,7 @@ class MemoEditScreen extends React.Component {
         });
         navigation.goBack();
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
       });
   }
 
@@ -52,6 +51,8 @@ class MemoEditScreen extends React.Component {
           onChangeText={(text) => { this.setState({ body: text }); }}
           autoCapitalize="none"
           autoCorrect={false}
+          underlineColorAndroid="transparent"
+          textAlignVertical="top"
         />
         <CircleButton onPress={this.handlePress.bind(this)}>
           {'\uf00c'}

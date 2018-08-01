@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   editButton: {
-    top: 40,
+    top: 35,
   },
 });
 
